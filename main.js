@@ -475,10 +475,140 @@ const m1=fluf.majic;
 console.log(m1===fluf.majic);
 console.log(m1());
 
+//Destructuring Arguments
+const raw={
+  w1:"Daily",
+  w2:"Weekly",
+  w3:"Monthly"
+};
+//create a function that returns the 3 properties to its caller
+function getData({w1,w2,w3}){
+  return`${w1} ${w2} ${w3}`;
+}
+console.log(getData(raw));//call object from the function with destructured argument
+//using array
+//using destructure array argument specify with square bracket
+const rayar=["Stanley","Leverlock","Tape"];
+//declare function
+function getDat([w1,w2,w3]){
+  return `${w1} ${w2} ${w3}`
+} 
+console.log(getDat(rayar));//call array using destructured argument
 
+//Call method
+function grif(){
+  return `Welcome ${this.name}`;
+}
+//create 2 objects
+const oj1={name:"to"};
+const oj2={name:"the machine"};
+//call function
+console.log(grif());//without call method
+console.log(grif.call(oj1));//with call method with oj1 parameter
+console.log(grif.call(oj2));//oj2 parameter
 
-    
-   
+//Variable Scope
+//declare function
+function ats(x){
+  return x/2;
+}
+//call function
+console.log(ats(10));//returns 5
+//console.log(x);//returns error x is undefined
+//Lexical Scope
+//declare 2 functions
+function g1(){
+  console.log("function one");
+}
+function g2(){
+  console.log("function two");
+}
+//call random functions
+g2();
+g1();
+g2();
+//declare variable x
+const xq=5;
+//declare function
+function s(){
+  console.log(xq);
+  console.log(yq);
+}
+//declare variable y
+const yq=7;
+//call function
+s();
 
-      
+//Global Scoping
+//declare 2 global variables
+let bus="Route"
+let subs=5000;
+//declare 2 functions
+function show(){
+  console.log(`${bus} You have ${subs} ways`);
+}
+function make(){
+  console.log(`What ${bus} to take?`);
+}
+show();
+make();
+//declare 2 global variables using object
+const user={
+  buss:"Route",
+  sub:5001
+};
+function shows(){
+  console.log(`${user.buss} You have ${user.sub} ways`);
+}
+function makes(){
+  console.log(`What ${user.buss} to take?`);
+}
+shows();
+makes();
+//Block scoping
+console.log("Block Start...");
+{
+  console.log("Inside Block");
+  const x=5
+  console.log(x);
+}
+console.log("Block End");
+console.log('Outside of the block:x=${x}');//x would not be defined because outside the block
+
+//Closure
+//declare outer function
+function Counter(){
+  let table=0; //cant access this variable outside of the function
+  return function(){
+    return table++;//now has access to table variable of function
+  };
+}
+//reference of the function
+let counter=Counter();
+console.log(counter()); 
+console.log(counter());
+console.log(counter());
+console.log(counter());
+//closure continued
+let closure;
+{
+  let block="Character"
+  closure=function(){
+    console.log(block);
+  }
+}
+//access block variable outside the block
+//console.log(block);
+closure();//now you can access block variable outside the block
+//final example with object
+let zzz;
+{
+  //declare object
+  let walt={name:"Character"};
+  //use arrow function
+  zzz=()=>{return walt;}
+}
+//console.log(zzz());//now you have reference of the object
+let ref=zzz();//create reference of the object
+console.log(ref.name);//can access block scope variable
 
