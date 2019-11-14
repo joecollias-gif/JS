@@ -260,7 +260,59 @@
   console.log(zz);
   console.log(!zz);
 
-    
+/*Assignment Operator (=)
+  Like let x=5
+  chaining j=x=40
+  Arithmatic addition
+  x=x+y;*/
+let c=10,
+  d=15;
+//c=c+d;with arithmatic addition
+c+=d;//with addition assignment operator
+console.log(c);
+c-=d;//with subraction
+console.log(c);
+c*=d;//multiplacation
+console.log(c);
+c/=d;//division
+console.log(c);
+c%=d;//remainder
+console.log(c);
+/*Bitwise Operator
+c<<=d//left shift
+c>>=d//right shift
+c>>>=d//right shift zero fill
+c&=d//and assignment 
+c|=d//or assignment
+c^=d//XOR assignment*/
+
+//Type of operator
+console.log(typeof 1);
+console.log(typeof"daily");
+console.log(typeof true);
+console.log(typeof null);//exception this would show object
+console.log(typeof function(){});
+//Comma(,)
+//let x=40,y=10 used(,)to seperate variables
+//Grouping Operator ()parenthesis
+//void operator will return undefined
+//<a href="javascript:void 0">Nothing happend</a>
+/*Destructing Assignment Operator
+normal object declaration*/
+const ject={aa:1,bb:2,ee:3,ff:5};
+//destructing assignment
+const{aa,bb,ee,ff,gg}=ject;
+console.log(aa);
+console.log(ee);
+//declare array
+const arry=[1,2,3,4,5,6];
+//destructing assignment
+let[a,b,o,...rest]=arry;//spread operator
+console.log(a);
+console.log(b);
+console.log(o);
+console.log(rest); 
+   
     
 
     
