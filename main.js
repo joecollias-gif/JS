@@ -110,4 +110,54 @@
       console.log("Wrong answer");
       break;          
   } 
+  /*loops
+    JS has 4 looping statements
+    1)While
+    2)do/While
+    3)for
+    4)for/in*/
+  //While loop only executed when expression is true
+  /*while (expression)
+      statement*/
+  //example print 0-9 numbers
+  let count = 0;
+  while (count < 10){
+    console.log(count);//count in console 
+    count++;//increase count value by 1
+  }
+  /*do/while loop
+  do
+    statement;
+    while(expression);*/
+  let counts = 0;
+  do{ //execute block at least once
+    console.log("Counts Value" + counts);
+    counts++; //increase count var val by 1
+  }while(counts < 3); //evaluate expression
+  /*for loop
+  for(initialization;expression;increment/decrement)
+    statement;-only executes if value of expression returns true*/
+  //print 0-4 on the console
+  for(let num = 0;num<5;num++)
+    console.log("Number" + num);
+  /*Execution patter
+  -initialize variable and specify value
+  -evaluate expression (if false terminates)
+  -executes statement if true
+  -execute increment/decrement operator*/
+  //multiple variables
+  for(let i=0,j=5;i<5;i++,j--){
+    console.log(i+"and"+j);
+  } 
+  /*above we increased variable i
+  decreased variable j*/
+  
+  //nested for loops
+  for(let k=1;k<4;k++){
+    for(let p=1;p<7;p++)
+    console.log(k+","+p);
+  }
+  console.log("\n");
+
+      
 
