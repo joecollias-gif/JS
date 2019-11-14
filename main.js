@@ -312,8 +312,170 @@ console.log(a);
 console.log(b);
 console.log(o);
 console.log(rest); 
-   
-    
+//Operator Precedence
+let qq;
+qq=5+3*2;
+//qq=5+6;preform multiplication
+//qq=11;preform addition
+//11;assign value 11 to qq variable
+console.log(qq);
+let ww;
+ww=20/4+2*(7+4-2);//23
+//ww=20/4+2*(9)parenthesis first
+//ww=5+2*9 next performed division 20/4
+//ww=5+18 next performed multi 2*9
+//ww=23 finally performed addition 5+18 
+console.log(ww);
+
+//Member access (.)
+//object.property; must be valid identifier
+const oj={id:"42", name: "horseface"};
+console.log(oj.name);//access object property using (.) member access operator
+console.log(oj.id);
+/*Computed Member Access[]
+console.log(oj[name])//same as above instead of (.) use [] */
+//in operator first declare object
+const car={cname:'ford',model:'f150',year:1997};
+console.log("cname" in car);//true
+//Operator new
+class Model{
+  constructor(){
+
+  }
+}
+//create instances of Model()object
+const c1=new Model();//create instance 1
+const c2=new Model();//create instance 2
+//Instance of Operator
+const day=new Date
+console.log(day instanceof Date);
+const ry=[1,2,3];
+console.log(ry instanceof Array);
+console.log(ry instanceof Date);
+//Delete operator
+const deke={x:1,y:2,z:3};
+console.log("x"in deke);//true x is property of object
+delete deke.x;
+console.log("x"in deke);//false x is deleted
+//using Array
+const pen=[1,2,3,4,5];
+console.log(pen[4]);
+delete pen[3];
+console.log(pen[3]);
+//Conditional Operator works like if else
+let print="That is awful";
+if(print){
+  console.log(print);
+}else{
+  print="No terrible";
+  console.log(print);
+}
+let prints="That is awful";//if you remove literal you would get "No terrible"
+prints=prints?prints:"No terrible";
+//above if expression is true you see "That is awful", if false you see "No terrible"
+console.log(prints);
+
+//Jump Statements
+for(let u=1;u<=5;u++){
+  if (u==3)break;//after break only 1-2
+  console.log(u);//before break 1-5
+  //break label statement
+  //break labelname;
+}  
+//Label statement allows to specify name to the specific block that you can refer elsewhere in program
+let abb=1;
+label:while(abb==1){
+  console.log(abb);//result is 1
+  break label;//breaks loop execution after 1
+}
+//Continue statement continues loop from last iteration
+let ba=0
+while(ba<5){
+  ba++;//increase value of ba by 1 post increment
+  if(ba==3){
+    continue;//will skip 3
+  }
+  console.log(ba); 
+}
+//Return Satement returns value to its caller
+//return expression;
+function puke(g){return g+g;}
+console.log(puke(5));//print addition of g variable
+
+//Functions
+/*function funname(arg,...,argn){
+  statements
+}*/
+function magic(){
+  //console.log("Warning");
+  //console.log("Function");
+  return"Warning Function";
+}
+//magic();//call function
+//console.log(magic());
+const ll=magic;
+console.log(ll());
+//using object property
+const pur={ll:magic};
+console.log(pur.ll());
+
+//Function Arguments
+//function with two paramenters or arguments
+function demo(front,rear){
+  //front and rear are formal arguments
+  //when they receive 5&40 value they become actual arguments
+  //front=5 and rear=40  
+  return (front+rear)/2;//return average of two numbers
+}
+let front=5,rear=40; 
+console.log(demo(5,40));
+console.log(demo(front,rear));
+//Default arguments
+function kk(x="3"){
+  return `in function:x=${x}`; //use backtick to specify string
+}
+console.log(kk());
+
+//Anonymous Funcion
+//assign function as expression
+/*const blu=function(){
+  statements
+}
+blu();calls function*/
+const blu={
+  name:"Anonymous Function",
+  invoke:function(){//can use invoke only would be method object property
+    return "Hey";}
+};//created an object with 2 properties name and invoke
+console.log(blu.invoke());//call function using object property
+
+//Arrow Notation
+//example anonymous function
+//const f1=function(){return"Whats up";}
+//anonymous function using arrow function
+const f1=()=>"Whats up";
+//anonymous function using argument
+//const f2=function(arg1){return`Value of the Argument:$(arg1`;}
+//using arrow function with argument
+const f2=arg1=>'Value of the Argument:$(arg1)';
+//using 2 arguments
+//const f3=function(arg1,arg2){return arg1*arg2;}
+//using arrow function with 2 arguments
+const f3=(arg1,arg2)=>arg1*arg2;
+
+//This Keyword
+const fluf={
+  name:"Gary",
+  majic(){return `Hi ${this.name}`;}
+  //this keyword refers to the current object
+}
+//call majic method
+console.log(fluf.majic());
+const m1=fluf.majic;
+console.log(m1===fluf.majic);
+console.log(m1());
+
+
 
     
    
