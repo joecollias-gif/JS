@@ -8,3 +8,5 @@ completed 33-36
 completed 37-39
 completed 40-43
 completed intro to JS
+Advanced JS
+complete 44-51

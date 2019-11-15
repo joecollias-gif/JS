@@ -782,11 +782,200 @@ const mik={
 //array[0]index comes before array[1]index
 //object can access using string or symbol
 //no guarantee object.a comes before object.b
-const mik={
-  d1:"exterior",
-  d2:"galvanized",
-  d3:"common",
-  d4:"nails",
-  d5:"for sale"
+const obj7={
+  f1:"exterior",
+  f2:"galvanized",
+  f3:"common",
+  f4:"nails",
+  f5:"for sale"
 };
 //using control flow statement
+for(let f in obj7){
+  console.log(obj7[f]);//show object properties
+}
+//Object Reference
+const obj8={};
+//create reference
+const qy=obj8;
+//create property
+qy.d="Property Created Using Reference";
+console.log(obj8.d);//show object property created from the reference
+
+//Class
+class model1{//model1 is name of class
+  constructor(mno,mname){
+    this.mno=mno;//object property
+    this.mname=mname;//object property
+    //body of constructor
+    //constructor used to initialize class properties
+  }
+  //create method
+  show(){
+    console.log(`Model Number:${this.mno} Model Name:${this.mname}`);
+  }
+}
+//create instance
+const obj11=new model1(357,"Baretta");
+obj11.show();
+const obj12=new model1();
+//use instanceof keyword to find which instance belongs to which class
+console.log(obj11 instanceof model1);//returns true obj11 is instance of model1 class
+
+//Prototype
+let d12=function(){//created function and specified reference of function in variable
+  this.a=1;//created 2 properties in function 
+  this.b=2;//a,b properties created
+}//use this keyword creates instance of function, function acting as object
+//create instance
+let o12=new d12();
+o12.d=5;//create property using instance
+//create prototype property
+d12.prototype.b=3;//override property b if not exist
+d12.prototype.c=4;//created c prototype property
+console.log(o12.a);
+console.log(o12.b);//b property not inherited using prototype because b property was already available in function as 2
+console.log(o12.c);//here property a,b,d is own property and property c is the prototype of an object
+console.log(o12.d);
+console.log(o12);
+console.log(d12);//call reference equal to constructor prototype
+console.log(d12.prototype);
+
+/*Static Methods 
+static methodname(){statements;}
+static methods used to create utility functions*/
+class StaticClassMethod{
+  static onCall(){//name of static method
+    return "This is a static method";
+  }
+  //create another static method
+  static onCall2(){
+    return `${this.onCall()} called using another static message`;
+  }  
+  
+
+}
+//create instance for demo
+const st=new StaticClassMethod();
+//call static method using instance
+//console.log(st.onCall());//return error message because static methods are called using class name itself
+console.log(StaticClassMethod.onCall2());
+class StaticClassMethodb{
+  //declare constructor
+  constructor(){
+    //console.log(StaticClassMethodb.onCall());
+    console.log(this.constructor.onCall());
+    //both ways above can use to call static method
+  }
+  static onCall(){
+    return "And this is static class message from constructor";
+  }
+} 
+const st1=new StaticClassMethodb();//static method called using instance 
+
+//Inheritance
+//parent class =>child class
+//use extends keyword
+//using inheritance can reuse properties and methods of the parent class in the child class
+//parent class=>Person=>property=>fname,lname
+//child class=>Age=>property=>age
+//create parent class Person
+class Person{
+  constructor(fname,lname){
+    this.fname=fname;
+    this.lname=lname;
+  }
+}
+//create child class
+//extends parent class
+class Ager extends Person{
+  constructor(age){
+    //call super method
+    super("Harry","Dim");//will call constructor of the Person Class (Parent Class)
+    this.age=age;
+  }
+  //create method to display fname,lname,age
+  Showup(){
+    console.log(this.fname+""+this.lname);
+    console.log(`Your age is ${this.age}`);
+  }
+}
+//create instance of the child class
+const dd=new Ager(93);//creating age class instance
+dd.Showup();//call child class method Showup
+//can access parent class properties using child class instance
+console.log(dd.fname);//accessing parent class property using child class instance
+console.log(dd.lname);
+
+/*Prototype Inheritance
+Object_proto_*/
+//create object cars
+//let vcle={
+  //Tire:"four",
+ // Make:"Sharocko",
+  //show(){
+    //console.log(`Car Make ${this.Make}, has${this.Tire}tires`);
+  //}
+
+///};
+//declare another object bike
+//let bike={
+ // CC:250,
+  //_proto_:vcle //created_prot_property of bike object and speicify vcle object
+//};
+//declare another object bicycle
+//let bicycle={
+  //Gear:5,
+  //_proto_:bike //created_proto_property of bicycle and specify bike object 
+//}
+//access vcle object show
+//bicycle.show()
+//console.log(bicycle);//prototype chain
+
+//specify_proto_property to bike object
+//bike._proto_=vcle;
+//console.log(bike); 
+//access bike property
+//console.log(bike.CC);
+//access car property using bike property
+//console.log(bike.Tire);
+//console.log(bike.Make);
+//bike.show();//access vcle method using bike object
+
+//Polymorphism
+//declare parent class
+class Employee{
+  constructor(name){
+    this.name=name;
+    this.age=42;
+  }
+  //declare method
+  EmployeeName(){
+    console.log(`Employee Name ${this.name}`);
+  }
+}
+//inherit parent class
+class Member extends Employee{
+  constructor(name,salary){
+    super(name);//call parent class constructor with child class parameter
+    this.name=name;
+    this.salary=salary;
+    this.age=72;//override age propery of parent class
+  }
+  //Override EmployeeName()method of parent class
+  EmployeeName(){
+    console.log(`Employee Name ${this.name}, Age ${this.age} and Salary ${this.salary} nickles`);
+  }
+}
+//create instance of the child class
+const mb=new Member("Rusty Bridges",35);
+mb.EmployeeName();//execute child class method
+
+//String Representation
+//Object.toString();
+//call date object
+const dte=new Date();
+console.log(dte);
+console.log(dte.toString());
+//above you get same output
+console.log(typeof dte.toString);
+console.log(typeof dte);
