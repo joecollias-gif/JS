@@ -612,3 +612,90 @@ let zzz;
 let ref=zzz();//create reference of the object
 console.log(ref.name);//can access block scope variable
 
+//IIFE(immediately invoke function expression)
+/*(function()){
+  //body of funcion
+}();*/
+//example
+const yi=(function(){
+  let ktv="immediately invoked function expression";
+  return ktv;
+})();//if you want to reference function you dont need();
+console.log(yi);//call function
+const fi=(function(){
+  let tar=12;//cant access this variable
+  return function(){
+    return `Value of Tar:${tar++}`;
+  }//using closure you can access the tar variable
+})();
+console.log(fi()); 
+console.log(fi());
+console.log(fi());
+
+//let vs var
+var vi=9;
+console.log(vi);
+//declare for loop with var keyword
+for(var ri=0;ri<3;ri++){
+  //inside block
+  console.log(ri);
+}
+//outside block
+console.log("Outside block:"+ri);//can access ri variable outside block with var
+//declare for loop with let keyword
+for (let ki=0;ki<3;ki++){
+  //inside block
+  console.log(ki);
+}
+//outside block
+//console.log("Outside block:"+ki);//cant access ki variable outside block with let
+//JS strict mode
+//"use strict";if you use this you will get error because strict mode does not declare in global mode
+ai="Global";//declare ai variable and assume as global variable
+console.log(ai);//no error JS assume ai as global variable
+(function(){
+  "use strict";//when you specify strict mode in the function variable only available in function
+  //bi="global";
+  //console.log(bi);
+})();
+
+//Arrays
+//different types of array literals
+const yr1=[1,2,3,4,5];//5 elements in array
+console.log(yr1[0]);
+console.log(yr1[1]);
+console.log(yr1[2]);
+const yr2=["one",2,true];//nonhomogenous array
+console.log(yr2[0]);
+console.log(yr2[1]);
+console.log(yr2[2]);
+//array containing array
+const yr3=[["one","two","three"],[1,2,3]];
+
+console.log(yr3[0][0]);
+console.log(yr3[1][1]);
+//console.log(yr3[2][2]);wont read undefined
+//nonhomogeneous array containing array 
+const yr4=[
+  {name:"Chanel",number:5},
+  [
+    //declare 2 objects
+    {name:"dont",subject:"use"},
+    {name:"dont",subject:"try"}
+  ]
+];
+console.log(yr4[1][0].name);
+console.log(yr4[1][0].subject);
+
+//array containing array with function
+const yr5=[
+  {name:"Daily Tuition",videos:150},[
+    //on 0 index of inner array
+    function(){
+      return"Containing Array";
+    },
+    //on 1 index of inner array
+    "three"]
+  
+]; 
+console.log(yr5[1][0]());//reference of function call use parenthesis 
