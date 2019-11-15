@@ -699,3 +699,94 @@ const yr5=[
   
 ]; 
 console.log(yr5[1][0]());//reference of function call use parenthesis 
+
+//Add or remove array element
+const bam=[2,3,4];//numerical array 0index=2
+//console.log(bam);shows array element&index
+//push method returns length after inserting array element
+console.log(bam.push(5));
+console.log(bam);
+//pop method removes last element in array
+console.log(bam.pop());//dont need to specify last element for pop
+console.log(bam); 
+//unshift and shift will add or remove element respectively to begining of array
+console.log(bam.unshift(1));//return length and add element at begining
+console.log(bam);
+console.log(bam.shift());
+console.log(bam);
+
+//Slice()vs Splice()
+//concat() method /declare numerical array
+const gig=[7,8,9];
+console.log(gig);
+console.log(gig.concat(10,11,12));//add elements to end
+//Slice()method /return subarray
+//take 2 arguments array.slice(arg1,arg2);
+const gig2=[1,2,3,4,5];
+console.log(gig2.slice(2));//will slice array and start from 2nd index (3) remember 0index
+console.log(gig2.slice(2,4));//will slice array to start from 2nd index and end before 4th index (5) so you would see (3,4)
+console.log(gig2.slice(-1));//starts from end and slice to show last element in array
+//Splice() method allows to add or remove array element at any position
+const gig3=[1,4,5];
+gig3.splice(1,0,2,3);//1 stands for what index you want to start from, 0 stands for what  you want to remove in this case nothing, 2,3 are elements to be added 
+console.log(gig3);//added 2,3 after 1st index //remove array elements
+gig3.splice(1,2);//1 stands for index to start from, 2 stands for 2 elements to be removed from the start index 2,3
+console.log(gig3);//shows 1,4,5
+
+//copyWithin() and fill()
+//arr5.copyWithin(target,start,end);//target is what element to copy, start is at which element to start copy from if omited assumed to be 0, end is at which element to end copy from if omited assumed array.length
+const arr6=[1,2,3,4,5];
+//arr6.copyWithin(1,2);//start from 1index, copying from 2index
+//console.log(arr6);//return 1,3,4,5,5
+//arr6.copyWithin(1,2,3);
+//console.log(arr6);
+//arr6.copyWithin(2,0);//start from 2nd index copy from 0index
+//console.log(arr6);
+arr6.copyWithin(1,-1);//start from 1index copying from end of array
+console.log(arr6);
+//fill method
+//arr7.fill(value,start,end);
+const arr7=[1,2,3,4,5];
+//arr7.fill("d")//show static d values in array elements
+//console.log(arr7);//d,d,d,d,d
+//arr7.fill("d",1);//start from 1index show //static d
+//console.log(arr7);1,d,d,d,d
+arr7.fill("d",1,3);//start from 1index show static d to 3rd index
+console.log(arr7);//1,d,d,4,5
+
+//Map function
+//declare array
+const vik=[1,2,4,8];
+//call vik and pass map funcion
+const map1=vik.map((x)=>x*2);
+//call both arrays
+console.log(vik);//simple array
+console.log(map1);//modified array by map funcion
+//declare array with 2 object elements
+const cart=[{product:"laptop",price:500},{product:"mobile",price:750}];
+//return product to product variable and price to price variable
+const product=cart.map(x=>x.product);//create array of product
+const price=cart.map(x=>x.price);//create array for price
+console.log(product);
+console.log(price);
+
+/*Advanced JS
+object
+const mik={
+  name:"String",
+  value:45
+};*/
+//Array vs Object
+//2 primary differences
+//array can access using index
+//array[0]index comes before array[1]index
+//object can access using string or symbol
+//no guarantee object.a comes before object.b
+const mik={
+  d1:"exterior",
+  d2:"galvanized",
+  d3:"common",
+  d4:"nails",
+  d5:"for sale"
+};
+//using control flow statement
