@@ -1145,6 +1145,106 @@ console.log(paras);//contain collection of nodes
 
 //paras[0].innerHTML="Demo Text";
 
+//Styling Elements
+//let sub=document.querySelector(".submit");
+//styling properties are case sensative
+//sub.style.backgroundColor="Black";
+//sub.style.color="White";//font color
+//sub.style.fontSize="3em";
+//sub.style.padding="1.5em";
+let sub=document.querySelector("input[type=submit");
+//add css class using add()
+sub.classList.add("submit");
+
+//New DOM Element
+//Element.createElement(tagName);
+//create 2 paragraphs
+let p1=document.createElement("pg");
+let p2=document.createElement("pg");
+let p10=document.createElement("pg");
+//specify demo text use textContent property
+p1.textContent="First Paragraph";
+p2.textContent="Second Paragraph";
+
+//append paragraph to DOM use appendChild()
+const content=document.querySelector(".content");
+content.appendChild(p1);
+//content.appendChild(p2);//here will follow p1
+//append paragraph to body
+document.body.appendChild(p2);//here shows
+//beneath p1
+document.body.appendChild(p10);
+//Specify Attribute using setAttribure()
+p1.setAttribute("class","para1");
+//update attribute value only
+p1.setAttribute("class","para");
+//remove attribute use removeAttribute()
+p1.removeAttribute("class");
+
+//Data Attibute 
+let nav=document.querySelectorAll(".navbar");
+//use getAttribute()
+console.log(nav[0].getAttribute("data-number"));
+console.log(nav[1].getAttribute("data-number"));
+console.log(nav[0].getAttribute("data-name"));
+console.log(nav[1].getAttribute("data-name"));
+//Use dataset property-get attribute value using name
+console.log(nav[0].dataset.number);
+console.log(nav[1].dataset.name);
+//className Property 
+//can get a set value of the class attribute
+let toggle=document.querySelector(".toggle");
+//create annonymous function
+let color=function(flag){
+  //declare if and else statement
+  if(flag){
+    toggle.className="toggle_in";
+  }else{
+    toggle.className="toggle_out";
+  }
+}
+color(false);
+
+//Click Event
+//declare a function
+function display(){
+  document.querySelector(".parah").innerHTML="This is paragraph text"
+}
+
+//addEventListener()calls event without HTML
+document.querySelector(".btn").addEventListener("click",function(){
+  //document.querySelector(".parah").innerHTML="using event listener";
+  document.querySelector(".parah").style.fontSize="3em";
+  document.querySelector(".parah").style.color="tomato";
+})
+
+//Focus and Blur Event
+//create focus event
+let form=document.getElementById("form");
+
+form.addEventListener(
+  "focus",
+  function(event) {
+  //event.target
+  console.log(event.target);
+  
+  //event.target.syle.background='light blue'
+  },true
+);
+/*form.addEventListener("blur",
+  function(event)  {
+  event.target.style.background="";
+ },true
+);*/
+
+//JQuery
+//$ for JQuery()
+let p5=$(".ph");
+console.log(p5);
+console.log(p5[0]);
+//JQuery function with HTML
+let para3=$("<p class='para3'>Paragraph3</p>");//create new DOM element
+console.log(para3[0]); 
 
 
 

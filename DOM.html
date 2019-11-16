@@ -6,15 +6,55 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
     
   <title>DOM</title>
+  <style>
+    .submit{
+      padding:1em 4em;
+      font-size:1em;
+      background-color:black;
+      color:whitesmoke;
+    }
+  </style>
+  <style>
+    .toggle_in{
+      color:lightcoral;
+    }
+    .toggle_out{
+      color:lightblue;
+    }
+  </style>
+  <style>
+    input{
+      padding:0.5em;
+      text-align:center;
+      font-size:0.9em;
+      background-color: blue;
+    }
+  </style>
 </head>
 <body>
+  <input type="submit"/>
   <p id="para"></p>
   <div class="div1">
     <pp class="paras"></pp>
     <pp id="para1"></pp>
   </div>
+  <div class="content"></div>
+  <nav class ="navbar" data-number="0" data-name="navbarlight"></nav>
+  <nav class="navbar" data-number="1" data-name="navbardark"></nav>
+  <p10 class="toggle">Color This Text</p10>
+  <button onclick="document.querySelector('.parag').innerHTML=Date()">Click Me</button>
+  <button class="btn">Click here</button>
+  <p3 class="parag"></p3>
+  <p4 class="parah">increase Font Size and color</p4>
+  <div id="form">
+    <input type="text"placeholder="Name">
+    <input type="password"placeholder="Password">
+  </div>
+  <p5 class="ph">Paragraph 1</p5>
+  <p6 class="ph2">Paragraph 2</p6>
 
-
+  
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
   <script src="main.js"></script>
 </body>
 </html> 

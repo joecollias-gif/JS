@@ -13,3 +13,5 @@ completed 44-51
 completed 52-57
 created DOM.html
 completed 58-59
+completed 60-65
+Completed starter tutorial for JS
