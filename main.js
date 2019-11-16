@@ -979,3 +979,161 @@ console.log(dte.toString());
 //above you get same output
 console.log(typeof dte.toString);
 console.log(typeof dte);
+
+//Maps
+//MapObject.size;
+//set()andget()
+//call map constructor
+const Mymaps=new Map();
+//create 3 variables
+let keyString="KeyString",//string
+  keyObj20={},//object
+  keyFunc=function(){};//function
+//use set()method to set key=>value pair
+Mymaps.set(keyString,"KeyString Value");  
+Mymaps.set(keyObj20,"KeyObj20 Value");
+Mymaps.set(keyFunc,"KeyFunc Value");
+//know size of map object
+console.log(Mymaps.size);
+//using get()print map object values
+console.log(Mymaps.get(keyString));
+console.log(Mymaps.get(keyObj20));
+console.log(Mymaps.get(keyFunc));
+//set NaN as a key
+Mymaps.set(NaN,"Not a Number");
+console.log(typeof NaN);
+console.log(Mymaps.get(NaN));
+//iterate map key and value
+for(let[key,value]of Mymaps){
+  console.log(`Map Keys:${key}, Values:${value}`);
+}
+//another way to create map object
+const NewMap=new Map([
+  [1,'One'],
+  [2,'two'],
+  [3,'three']
+])
+//iterate this new map object using forEach()
+NewMap.forEach(function(value,key){
+  console.log(`Map Keys:${key}, Values:${value}`);
+});
+
+//WeakMap()
+//Garbage Collection
+//declare object
+let flo={
+  name:"Twistup"
+};
+console.log(flo.name);
+flo=null;
+//cant access name property
+//console.log(flo.name);//JS put junk datat in this property
+//call weakmap constructor()
+let weakmap=new WeakMap();
+let obj30={},obj31={};//creates empty object
+//set weakmap key and value
+weakmap.set(obj30,"Private");
+weakmap.set(obj31,"Private Detective");
+console.log(weakmap.get(obj30));
+console.log(weakmap.get(obj31));
+//using for of loop try to access weakmap key and value
+//for(let[key,value]of weakmap){
+  //console.log(key);
+  //console.log(value);  
+//}returns weakmap is not iritable cant access it because it is private
+
+//Set()
+//duplicate values are not allowed
+//call set object constructor
+const stp=new Set([1,2,3,4,4]);//will not print duplicate values only accepts unique
+//add element is set object use add()method
+stp.add(1);
+stp.add(2);//duplicate value rejected
+//stp.add(2);
+stp.add({a:"one",b:"sixty"});
+//to know element is present in collection use has()method
+console.log(stp.has(11));
+//to delete element
+stp.delete(4);//delete value 4 from element
+console.log(stp);
+//iterate set()object using for of loop
+for(let item of stp){
+  console.log(item);
+}
+//iterate set()object using for each loop
+stp.forEach(value=>{
+  console.log(value);
+});
+//WeakSet()
+//only contains objects
+//cannot be iterated
+//call weakset() constructor
+const ws=new WeakSet();
+//declare 2 empty objects
+let obj40={},foo={};
+//add objects in the weakset collection
+ws.add(obj40);
+ws.add(foo);
+//delete 1 object
+ws.delete(foo);
+//check if foo is present
+console.log(ws.has(foo));
+console.log(ws.has(obj40));  
+console.log(ws);
+
+//Exception Handling
+/*try{
+  statements
+}catch(arg){
+  statements
+}*/
+//using error object
+/*in catch block to catch would be
+console.log(`Catch Block Error:${err}')*/
+/*try{
+  pip;//variable not defined
+  console.log("Try Block"); 
+}catch(err){
+  console.log(err.message);
+  console.log(err.name);
+  console.log(err.stack);
+}finally{
+  console.log("Finally Execute");
+};
+Regular Expressions
+long&short syntax
+long syntax
+let reg=new RegExp("pattern","flags");
+short syntax
+let reg= /pattern/; without flags
+let reg= /pattern/flags;
+with flags*/
+let sty="Welcome to the machine";
+//call regular expression constructor
+//let reg=new RegExp("machine");//search machine word from sty string(long syntax)
+//let reg= /machine/;//using short syntax
+//let reg=/MACHINE/; //returns -1 cant find
+let reg=/MACHINE/i; //i is flag
+//call search()method of string object
+console.log(sty.search(reg)); //returns index number starting position of word
+/*5 type of flags
+  1)i case sensative search
+  2)g global search 
+  3)m multiline search 
+  4)u unique code search
+  5)p sticky search
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
