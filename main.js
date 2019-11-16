@@ -1123,6 +1123,29 @@ console.log(sty.search(reg)); //returns index number starting position of word
   4)u unique code search
   5)p sticky search
 */
+//Accessing paragraph using getElementByid()
+//let para=document.getElementById("para");//specify id as argument
+//console.log(para);
+//para.innerHTML="This is DOM Tutorial";
+//use JS chaining
+//document.getElementById("para").innerHTML="This is DOM Tutorial";
+//do same thing using getElementByTagName()
+//let ppp=document.getElementsByTagName("ppp");
+//console.log(ppp);
+
+//Document Methods
+//QuerySelector()
+//QuerySelectorAll()
+//let paras=document.querySelector(".paras");//only returns first matching element in the document
+//console.log(paras);
+//para.innerHTML="Paragraph";
+let paras=document.querySelectorAll(".paras");//return nodelist object
+console.log(paras);//contain collection of nodes
+//accessing nodes using index number
+
+//paras[0].innerHTML="Demo Text";
+
+
 
 
 

@@ -9,6 +9,7 @@ completed 37-39
 completed 40-43
 completed intro to JS
 Advanced JS
-complete 44-51
-complete 52-57
+completed 44-51
+completed 52-57
 created DOM.html
+completed 58-59
